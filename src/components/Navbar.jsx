@@ -2,6 +2,7 @@ import { useGlobalReducer } from "../hooks/useGlobalReducer";
 import { Link } from "react-router-dom";
 import { removeFavorite } from "../actions";
 import starwarsLogo from "../assets/img/starwars-logo-transp.png";
+import { SearchBar } from "./SearchBar";  // <-- Importamos la barra de búsqueda
 
 export const Navbar = () => {
     const { store, dispatch } = useGlobalReducer();
@@ -19,6 +20,12 @@ export const Navbar = () => {
                     style={{ height: "70px", objectFit: "contain" }}
                 />
             </Link>
+
+            {/* Barra de búsqueda en el centro */}
+            <div className="mx-auto">
+                <SearchBar />
+            </div>
+
             <div className="ml-auto">
                 <div className="dropdown">
                     <button
