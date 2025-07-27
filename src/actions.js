@@ -78,7 +78,6 @@ export const getDetail = async (dispatch, type, id) => {
         const response = await fetch(`https://www.swapi.tech/api/${type}/${id}`);
         const data = await response.json();
 
-        // Combina properties y description en un solo objeto
         const detailData = {
             ...data.result.properties,
             description: data.result.description
@@ -99,4 +98,10 @@ export const addFavorite = (dispatch, favorite) => {
 
 export const removeFavorite = (dispatch, favorite) => {
     dispatch({ type: "REMOVE_FAVORITE", payload: favorite });
+};
+
+
+
+export const getImageUrl = (type, id) => {
+    return `https://raw.githubusercontent.com/tbone849/star-wars-guide/master/build/assets/img/${type}/${id}.jpg`;
 };

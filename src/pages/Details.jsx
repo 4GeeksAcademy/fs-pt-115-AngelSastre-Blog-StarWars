@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useGlobalReducer } from "../hooks/useGlobalReducer";
 import { getDetail } from "../actions";
+import { getImageUrl } from "../actions";
+
 import placeholderImage from "../assets/img/placeholder.png";
 
 export const Details = () => {
@@ -24,10 +26,9 @@ export const Details = () => {
             <div className="row mb-4">
                 <div className="col-md-5 text-center">
                     <img
-                        src={placeholderImage}
+                        src={getImageUrl(type === "people" ? "characters" : type, id)}
                         alt={item.name}
-                        className="img-fluid border border-warning rounded"
-                        style={{ maxHeight: "400px", objectFit: "cover" }}
+                        onError={(e) => e.target.src = placeholderImage}
                     />
                 </div>
                 <div className="col-md-7">

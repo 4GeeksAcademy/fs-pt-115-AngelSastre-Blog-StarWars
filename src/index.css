@@ -50,7 +50,7 @@ body {
 }
 
 .starwars-card img {
-    height: 220px;
+    height: 280px;
     width: 100%;
     object-fit: cover;
     border-bottom: 2px solid #FFE81F;
@@ -109,4 +109,11 @@ hr.border-warning {
 
 .fw-bold {
     font-weight: bold;
+}
+
+.card-img-top {
+    height: 250px;       
+    width: 100%;         
+    object-fit: cover !important;    
+    object-position: top; 
 }

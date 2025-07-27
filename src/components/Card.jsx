@@ -1,9 +1,10 @@
 import { useGlobalReducer } from "../hooks/useGlobalReducer";
 import { addFavorite } from "../actions";
 import { Link } from "react-router-dom";
+import { getImageUrl } from "../actions";
 import placeholderImage from "../assets/img/placeholder.png";
 
-export const Card = ({ item, type }) => {
+export const Card = ({ item, type, imageType }) => {
     const { dispatch } = useGlobalReducer();
 
     const handleAddFavorite = () => {
@@ -13,9 +14,10 @@ export const Card = ({ item, type }) => {
     return (
         <div className="card starwars-card text-light p-2 mt-2">
             <img
-                src={item.image || placeholderImage}
+                src={getImageUrl(imageType, item.uid)}
                 alt={item.name}
-                className="card-img-top img-fluid mb-2"
+                className="card-img-top img-fluid mb-2 card-images"
+                onError={(e) => (e.target.src = placeholderImage)}
             />
             <div className="card-body d-flex flex-column justify-content-between">
                 <h4 className="card-title text-warning">{item.name}</h4>
@@ -24,7 +26,7 @@ export const Card = ({ item, type }) => {
                     <Link to={`/details/${type}/${item.uid}`}>
                         <button className="btn btn-warning btn-sm">Learn More!</button>
                     </Link>
-                    <button 
+                    <button
                         className="btn btn-outline-warning btn-sm"
                         onClick={handleAddFavorite}
                     >
@@ -35,3 +37,4 @@ export const Card = ({ item, type }) => {
         </div>
     );
 };
+

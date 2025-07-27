@@ -10,7 +10,11 @@ export const CardList = ({ title, items, type }) => {
                 ) : (
                     items.map((item, index) => (
                         <div key={index} className="flex-shrink-0">
-                            <Card item={item} type={type} />
+                            <Card
+                                item={item}
+                                type={type}
+                                imageType={type === "people" ? "characters" : type}
+                            />
                         </div>
                     ))
                 )}
@@ -18,4 +22,5 @@ export const CardList = ({ title, items, type }) => {
         </div>
     );
 };
+
 
