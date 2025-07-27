@@ -1,0 +1,112 @@
+/* ===== General ===== */
+body {
+    margin: 0;
+    background-color: #111;
+    color: #fff;
+    padding-top: 90px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.text-warning {
+    color: #FFE81F;
+}
+
+/* ===== Navbar ===== */
+.border-bottom-yellow {
+    border-bottom: 2px solid #FFE81F;
+}
+
+/* ===== Footer ===== */
+.footer-starwars {
+    background-color: #000;
+    color: #FFE81F;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.7);
+    border-top: 2px solid #FFE81F;
+}
+
+/* ===== Card ===== */
+.starwars-card {
+    width: 320px;
+    min-height: 430px;
+    background-color: #1a1a1a;
+    border: 2px solid #FFE81F;
+    border-radius: 10px;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+}
+
+.starwars-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 4px 15px rgba(255, 232, 31, 0.4);
+}
+
+.starwars-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 2px solid #FFE81F;
+}
+
+.starwars-card .btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+/* ===== Scroll horizontal ===== */
+.starwars-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-behavior: smooth;
+}
+
+.starwars-scroll::-webkit-scrollbar {
+    height: 8px;
+    background: #000;
+}
+
+.starwars-scroll::-webkit-scrollbar-thumb {
+    background: #FFE81F;
+    border-radius: 4px;
+}
+
+.starwars-scroll::-webkit-scrollbar-thumb:hover {
+    background: #ffdb4d;
+}
+
+/* ===== Sección títulos ===== */
+.section-title {
+    color: #FFE81F;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.delete-icon:hover {
+    color: #ff4d4d;
+    transform: scale(1.2);
+}
+
+hr.border-warning {
+    border-top: 2px solid #FFE81F;
+}
+
+.fw-bold {
+    font-weight: bold;
+}
