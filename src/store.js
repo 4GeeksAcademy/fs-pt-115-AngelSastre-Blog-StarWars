@@ -3,7 +3,7 @@ export const initialStore = {
     planets: [],
     vehicles: [],
     favorites: [],
-    detail: {} // Para guardar el detalle del elemento seleccionado
+    detail: {} 
 };
 
 export const storeReducer = (store, action = {}) => {
